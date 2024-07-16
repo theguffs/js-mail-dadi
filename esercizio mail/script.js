@@ -2,23 +2,44 @@
 
 const listaEmail = ["youssef1@gmail.com", "youssef2@gmail.com", "youssef3@gmail.com"];
 
-// pulsante al click
+ // pulsante
 
-document.getElementById("verificaButton").addEventListener("click", function() {
+ document.getElementById("verificaButton").addEventListener("click", function() {
 
-    // email inserita dall'utente
+    // Ottieni l'email inserita dall'utente
 
     const emailUtente = document.getElementById("emailInput").value;
     const messaggio = document.getElementById("messaggio");
 
-    // se la mail è nella lista allora fai questo
-    if (listaEmail.includes(emailUtente)) {
+    // Flag per verificare se l'email è presente nella lista
+
+    let emailValida = false;
+
+    // Ciclo per controllareemail nella lista
+
+    for (let i = 0; i < listaEmail.length; i++) {
+
+        if (listaEmail[i] == emailUtente) {
+            emailValida = true;
+        }
+
+    }
+
+    // se la mail è valida scrivi questo
+
+    if (emailValida) 
+
         messaggio.textContent = "Benvenuto Youssef!";
         messaggio.classList.add('text-success');
+
     } 
-    // altrimenti fai questo
+
+    // altrimenti scrivi questo
+
     else {
-        messaggio.textContent = "non sei Youssef =(";
+
+        messaggio.textContent = "Non sei Youssef =(";
         messaggio.classList.add('text-danger');
+        
     }
 });
