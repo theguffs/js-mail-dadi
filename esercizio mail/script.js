@@ -11,11 +11,11 @@ const listaEmail = ["youssef1@gmail.com", "youssef2@gmail.com", "youssef3@gmail.
     const emailUtente = document.getElementById("emailInput").value;
     const messaggio = document.getElementById("messaggio");
 
-    // Flag per verificare se l'email è presente nella lista
+    //verificare che l'email è presente nella lista
 
     let emailValida = false;
 
-    // Ciclo per controllareemail nella lista
+    // Ciclo per controllare email nella lista
 
     for (let i = 0; i < listaEmail.length; i++) {
 
@@ -27,12 +27,12 @@ const listaEmail = ["youssef1@gmail.com", "youssef2@gmail.com", "youssef3@gmail.
 
     // se la mail è valida scrivi questo
 
-    if (emailValida) 
+    if (emailValida = true) {
 
         messaggio.textContent = "Benvenuto Youssef!";
         messaggio.classList.add('text-success');
 
-    } 
+    }
 
     // altrimenti scrivi questo
 
